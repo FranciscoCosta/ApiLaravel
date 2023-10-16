@@ -30,6 +30,29 @@ class UserController extends Controller
 
     public function show(string $id)
     {
+        // $user = User::where('id', '=', $id)->first();
         $user = User::findOrFail($id);
+
+        // if(!$user){
+        //     return response()->json(['message' => 'User not found!'], 404);
+        // }
+
+        return new UserResource($user);
+
+    }
+
+    public function update(string $id, StoreUpdateUserRequest $request){
+
+        $user = User::findOrFail($id);
+
+        $data = $request->all();
+
+        if(isset($data['password'])){
+            $data['password'] = bcrypt($data['password']);
+        }
+
+        $user->update($data);
+
+        return new UserResource($user);
     }
 }
