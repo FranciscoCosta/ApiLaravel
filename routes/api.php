@@ -1,9 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
 
+Route::get('/users', [UserController::class, 'index']);
+
 Route::get('/', function(){
-    return ['message' => 'Api working'];
+    return response()->json(['message' => 'Hello World!'], 200);
 });
