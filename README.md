@@ -3,7 +3,6 @@
 <body>
     <h1>README - API de Cadastro, Edição e Exclusão de Usuários</h1>
     <p>Este é um projeto em Laravel que oferece uma API para gerenciar usuários, incluindo operações de cadastro, edição e exclusão.</p>
-
     <h2>Recursos da API</h2>
     <ul>
         <li><strong>Cadastro de Usuário:</strong> Permite criar um novo usuário.</li>
